@@ -1,0 +1,127 @@
+// ==================================================
+// UTILITIES
+// ==================================================
+// file:     utilities.less
+// version:  1.0
+// --------------------------------------------------
+
+// ==================================================
+
+// POSITIONING
+
+// ==================================================
+
+
+// --------------------------------------------------
+// Floats & Pull's
+// --------------------------------------------------
+
+// Pull Left
+// --------------------------------------------------
+.pull-right {
+	float: right !important;
+}
+
+// Pull Right
+// --------------------------------------------------
+.pull-left {
+	float: left !important;
+}
+
+// Pull Center
+// --------------------------------------------------
+.pull-center {
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+// Pull Vertical
+// --------------------------------------------------
+.pull-vertical {
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+// --------------------------------------------------
+// Images
+// --------------------------------------------------
+
+// Image Right
+// --------------------------------------------------
+.image-right {
+	float: right;
+	margin: 12px 0 12px 12px;
+}
+
+// Image Left
+// --------------------------------------------------
+.image-left {
+	float: left;
+	margin: 12px 12px 12px 0;
+}
+
+// Image Center
+// --------------------------------------------------
+.image-center {
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+// --------------------------------------------------
+// Floats
+// --------------------------------------------------
+
+// Block
+// --------------------------------------------------
+.block {
+	float: none;
+	margin: 0 auto;
+}
+
+// Clear
+// --------------------------------------------------
+.clear, .clearfix {
+	@include clearfix();
+}
+
+// ==================================================
+
+// VISUAL
+
+// ==================================================
+
+.hide {
+	display: none !important;
+}
+.show {
+	display: block !important;
+}
+.invisible {
+	visibility: hidden;
+}
+.affix {
+	position: fixed;
+}
+
+.spacer {
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+.no-margin-bottom, .following { margin-bottom: 0 !important; }
+.no-margin-top { margin-top: 0 !important; }
+.no-margin-left { margin-left: 0 !important; }
+.no-margin-right { margin-right: 0 !important; }
+.no-margin { margin: 0 !important; }
+
+.no-padding-bottom { padding-bottom: 0 !important; }
+.no-padding-top { padding-top: 0 !important; }
+.no-padding-left { padding-left: 0 !important; }
+.no-padding-right { padding-right: 0 !important; }
+.no-padding { padding: 0 !important; }
+
+.padder {
+	@include padder(15px, 15px);
+}

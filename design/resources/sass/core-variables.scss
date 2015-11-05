@@ -1,0 +1,201 @@
+// ==================================================
+// VARIABLES
+// ==================================================
+// file:     core-variables.scss
+// version:  1.0
+// --------------------------------------------------
+
+
+
+// ==================================================
+
+// GLOBAL
+
+// ==================================================
+
+
+// --------------------------------------------------
+// Base
+// --------------------------------------------------
+
+// Text
+// --------------------------------------------------
+$body-bg: $white;
+$text-color: $black;
+
+// Links
+// --------------------------------------------------
+$link-color: $black;
+$link-hover-color: $gray-dark;
+
+
+// --------------------------------------------------
+// Typography
+// -------------------------------------------------- 
+
+// Font Family
+// --------------------------------------------------
+$font-family-text: 'droid_sansregular', 'Helvetica Neue', Helvetica, Arial, sans-serif !default;
+$font-family-headings: 'droid_serifregular', 'Helvetica Neue', Helvetica, sans-serif !default;
+$font-family: $font-family-text !default;
+$font-family-droidserifitalic: 'droid_serifitalic', 'Times New Roman', Times, serif;
+$font-family-droidserifbold: 'droid_serifbold', Georgia, 'Times New Roman', Times, serif;
+
+$font-size: 14px;
+$font-size-base: $font-size; // alias
+$font-ratio: 1.125; // minor third
+
+$font-size-xs: scale(-1);
+$font-size-sm: scale(0);
+$font-size-md: scale(1);
+$font-size-lg: scale(2);
+
+// Font Scaling
+// --------------------------------------------------
+$line-height: 1.618034; // golden ratio
+$line-height-base: $line-height; // alias of above
+$line-height-computed: floor($font-size * $line-height); // px > em
+
+
+// --------------------------------------------------
+// Headings
+// --------------------------------------------------
+$headings-line-height: 1.1;
+
+
+// --------------------------------------------------
+// Iconography
+// --------------------------------------------------
+
+// Setup
+// --------------------------------------------------
+$font-path:  "../fonts";
+$font-version: "4.1.0";
+
+
+// --------------------------------------------------
+// Padding & Spacers
+// -------------------------------------------------- 
+
+// Padding
+// --------------------------------------------------
+$padding-lg: 80px 60px;
+$padding-md: 60px 40px;
+$padding-sm: 40px 20px;
+$padding-xs: 20px 16px;
+
+$padding-base-vertical:     6px !default;
+$padding-base-horizontal:   12px !default;
+
+$padding-large-vertical:    10px !default;
+$padding-large-horizontal:  16px !default;
+
+$padding-small-vertical:    5px !default;
+$padding-small-horizontal:  10px !default;
+
+$padding-xs-vertical:       1px !default;
+$padding-xs-horizontal:     5px !default;
+
+// Line height
+// --------------------------------------------------
+$line-height-large:         1.33 !default;
+$line-height-small:         1.5 !default;
+
+// Borders
+// --------------------------------------------------
+$border-radius: 5px;
+$border-radius-base: $border-radius; // alias
+$border-radius-large:       6px !default;
+$border-radius-small:       3px !default;
+
+
+// --------------------------------------------------
+// Z-index
+// --------------------------------------------------
+$zindex-navigation:        1000 !default;
+$zindex-dropdown:          1000 !default;
+
+
+// ==================================================
+
+// ELEMENTS
+
+// ==================================================
+
+
+// --------------------------------------------------
+// Horizontal divider (Hr)
+// --------------------------------------------------
+
+
+// --------------------------------------------------
+// Lists
+// --------------------------------------------------
+
+
+// ==================================================
+
+// COMPONENTS
+
+// ==================================================
+
+
+// ==================================================
+
+// MEDIA QUERIES & SCREEN
+
+// ==================================================
+
+// --------------------------------------------------
+// Site maximum width
+// --------------------------------------------------
+$screen-max: 595px; // 1920px
+
+
+// --------------------------------------------------
+// Responsive widths
+// --------------------------------------------------
+
+$screen-xs: 480px !default;
+$screen-xs-min: $screen-xs !default;
+$screen-phone: $screen-xs-min !default;
+
+$screen-sm: 768px !default;
+$screen-sm-min: $screen-sm !default;
+$screen-tablet: $screen-sm-min !default;
+
+$screen-md: 992px !default;
+$screen-md-min: $screen-md !default;
+$screen-desktop: $screen-md-min !default;
+
+$screen-lg: 1200px !default;
+$screen-lg-min: $screen-lg !default;
+$screen-lg-desktop: $screen-lg-min !default;
+
+$screen-xs-max: ($screen-sm-min - 1) !default;
+$screen-sm-max: ($screen-md-min - 1) !default;
+$screen-md-max: ($screen-lg-min - 1) !default;
+
+
+// --------------------------------------------------
+// Grid Setup
+// --------------------------------------------------
+
+$grid-columns: 12 !default;
+$grid-gutter-width: 10px !default;
+$grid-float-breakpoint: $screen-sm-min !default;
+$grid-float-breakpoint-max: ($grid-float-breakpoint - 1) !default;
+
+
+// --------------------------------------------------
+// Container widths
+// --------------------------------------------------
+
+$container-tablet: ((720px + $grid-gutter-width)) !default;
+$container-sm: $container-tablet !default;
+
+$container-desktop: ((940px + $grid-gutter-width)) !default;
+$container-md: $container-desktop !default;
+
+$container-large-desktop: ((1140px + $grid-gutter-width)) !default;
+$container-lg: $container-large-desktop !default;

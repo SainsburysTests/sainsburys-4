@@ -1,0 +1,64 @@
+// ==================================================
+
+// 1  MASTHEAD / FOOTER
+
+// ==================================================
+
+.masthead {
+	padding: 10px 0 20px;
+}
+
+
+// --------------------------------------------------
+// 1.2  Masthead Logo
+// --------------------------------------------------
+.masthead section {
+	h1 {
+		font-size: scale(8);
+		margin: 0;
+	}
+
+	.company .icon-logo {
+		font-size: 40px;
+	}
+	.company a:hover {
+		text-decoration: none;
+	}
+}
+
+// --------------------------------------------------
+// 1.2  Masthead Nav
+// --------------------------------------------------
+.masthead nav {
+	text-align: right;
+
+	.nav {
+		@extend .list-inline;
+
+		a:hover {
+			text-decoration: none;
+		}
+	}
+
+	li:last-child {
+		padding-right: 0;
+	}
+
+	.icon-facebook,
+	.icon-google,
+	.icon-twitter {
+		font-size: 41px;
+	}
+}
+
+// MD and down
+@media (max-width: $screen-md-min)
+{
+	.masthead section {
+		text-align: center;
+	}
+
+	.masthead nav {
+		display: none;
+	}
+}

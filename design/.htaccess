@@ -1,0 +1,9 @@
+RewriteBase /
+DirectoryIndex index.html index.htm default.htm index.php index.php3 index.phtml index.php5 index.shtml mwindex.phtml
+
+<FilesMatch "\.(htm|html|php)$">
+    <IfModule mod_headers.c>
+        BrowserMatch MSIE ie
+        Header set X-UA-Compatible "IE=Edge" env=ie
+    </IfModule>
+</FilesMatch>

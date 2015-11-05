@@ -1,0 +1,32 @@
+<head>
+  <title>Sainsburys Flickr Test</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Sainsburys Flickr Test</h1>
+        {{>feed}}
+    </div>
+</body>
+
+<template name="feed">
+    {{#each lists}}
+        {{>row}}
+    {{/each}}
+</template>
+
+<template name='row'>
+    <div class='row items'>
+        {{#each row}}
+            {{>item}}
+        {{/each}}
+    </div>
+</template>
+
+<template name="item">
+    <div class="item col-xs-12 col-md-4">
+        <a href="#" id="{{id}}" class="thumbnail {{selected}}" title="{{title}}">
+            <img src="{{media.m}}" alt="{{title}}" class="img-responsive">
+        </a>
+    </div>
+</template>

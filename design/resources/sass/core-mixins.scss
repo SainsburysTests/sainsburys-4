@@ -1,0 +1,275 @@
+// ==================================================
+// MIXINS
+// ==================================================
+// file:     core-mixins.less
+// version:  1.0
+// --------------------------------------------------
+
+
+// ==================================================
+
+// UTILITES
+
+// ==================================================
+
+// --------------------------------------------------
+// Text Replacement
+// -------------------------------------------------- 
+@mixin text-hide() {
+	font: #{0/0} a;
+	color: transparent;
+	text-shadow: none;
+	background-color: transparent;
+	border: 0;
+}
+
+// --------------------------------------------------
+// Opacity
+// --------------------------------------------------
+@mixin opacity($opacity) {
+	opacity: $opacity;
+	$opacity-ie: ($opacity * 100);
+	filter: #{alpha(opacity=$opacity-ie)};
+}
+
+// --------------------------------------------------
+// Images
+// --------------------------------------------------
+
+// Responsive
+// --------------------------------------------------
+@mixin image-responsive($display: block) {
+	display: $display;
+	width: 100% \9; // IE10
+	max-width: 100%;
+	height: auto;
+}
+
+// Sizing shortcuts (Size)
+// --------------------------------------------------
+@mixin size($width, $height) {
+	width: $width;
+	height: $height;
+}
+
+// Sizing shortcuts (Square)
+// --------------------------------------------------
+@mixin square($size) {
+	@include size($size, $size);
+}
+
+// --------------------------------------------------
+// Placeholder
+// --------------------------------------------------
+@mixin placeholder($color: $input-color-placeholder) {
+	&::-moz-placeholder           { color: $color;   // Firefox
+		opacity: 1; } // See https://github.com/twbs/bootstrap/pull/11526
+	&:-ms-input-placeholder       { color: $color; } // Internet Explorer 10+
+	&::-webkit-input-placeholder  { color: $color; } // Safari and Chrome
+}
+
+// --------------------------------------------------
+// Tab Focus
+// --------------------------------------------------
+@mixin tab-focus() {
+	outline: thin dotted;
+	outline: 5px auto -webkit-focus-ring-color;
+	outline-offset: -2px;
+}
+
+// --------------------------------------------------
+// Typography
+// --------------------------------------------------
+@mixin text-overflow() {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+// --------------------------------------------------
+// Reset Text
+// --------------------------------------------------
+@mixin reset-text() {
+	font-family: $font-family;
+	// We deliberately do NOT reset font-size.
+	font-style: normal;
+	font-weight: normal;
+	letter-spacing: normal;
+	line-break: auto;
+	line-height: $line-height;
+	text-align: left; // Fallback for where `start` is not supported
+	text-align: start;
+	text-decoration: none;
+	text-shadow: none;
+	text-transform: none;
+	white-space: normal;
+	word-break: normal;
+	word-spacing: normal;
+	word-wrap: normal;
+}
+
+
+// ==================================================
+
+// BUTTONS
+
+// ==================================================
+
+// --------------------------------------------------
+// Button Variants
+// --------------------------------------------------
+@mixin button-variant($color, $background, $border) {
+	color: $color;
+	background-color: $background;
+	border-color: $border;
+
+	&:hover,
+	&:focus,
+	&:active,
+	&.active,
+	.open > &.dropdown-toggle {
+		color: $color;
+		@if ($background != transparent) {
+			background-color: darken($background, 10%);
+			border-color: darken($border, 10%);
+		}
+	}
+	&:active,
+	&.active,
+	.open > &.dropdown-toggle {
+		background-image: none;
+	}
+	&.disabled,
+	&[disabled],
+	fieldset[disabled] & {
+		&,
+		&:hover,
+		&:focus,
+		&:active,
+		&.active {
+			background-color: $background;
+			border-color: $border;
+		}
+	}
+
+	.badge {
+		color: $background;
+		background-color: $color;
+	}
+}
+
+// Button sizes
+@mixin button-size($padding-vertical, $padding-horizontal, $font-size, $line-height, $border-radius) {
+	padding: $padding-vertical $padding-horizontal;
+	font-size: $font-size;
+	line-height: $line-height;
+	border-radius: $border-radius;
+}
+
+
+// ==================================================
+
+// NAVS
+
+// ==================================================
+
+// --------------------------------------------------
+// Nav Pills
+// --------------------------------------------------
+@mixin pills-variant($color, $background, $border)
+{
+	> li {
+		> a {
+			border-color: $border; // new
+			background-color: $background; // new
+			color: $color; // new
+
+			&:hover,
+			&:focus {
+				color: $color;
+				@if ($background != transparent) {
+					background-color: darken($background, 10%);
+					border-color: darken($border, 10%);
+				}
+			}
+		}
+
+		// Active state
+		&.active > a {
+			&,
+			&:hover,
+			&:focus {
+				color: $color;
+				@if ($background != transparent) {
+					background-color: darken($background, 10%);
+					border-color: darken($border, 10%);
+				}
+			}
+		}
+	}
+}
+
+
+// ==================================================
+
+// LAYOUT
+
+// ==================================================
+
+// --------------------------------------------------
+// Clearfix
+// --------------------------------------------------
+@mixin clearfix() {
+	&:before,
+	&:after {
+		content: " "; // 1
+		display: table; // 2
+	}
+	&:after {
+		clear: both;
+	}
+}
+
+// --------------------------------------------------
+// Center Block
+// --------------------------------------------------
+@mixin center-block() {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+// --------------------------------------------------
+// Padding Top/Bottom
+// --------------------------------------------------
+@mixin padder($top, $bottom) {
+	padding-top: $top;
+	padding-bottom: $bottom;
+}
+
+
+// ==================================================
+
+// RESPONSIVE UTILITIES
+
+// ==================================================
+
+// More easily include all the states for responsive-utilities.less.
+// --------------------------------------------------
+@mixin responsive-visibility($parent) {
+	#{$parent} {
+		display: block !important;
+	}
+	table#{$parent}  { display: table; }
+	tr#{$parent}     { display: table-row !important; }
+	th#{$parent},
+	td#{$parent}     { display: table-cell !important; }
+}
+
+// [converter] $parent hack
+// --------------------------------------------------
+@mixin responsive-invisibility($parent) {
+	#{$parent} {
+		display: none !important;
+	}
+}

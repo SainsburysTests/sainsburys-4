@@ -1,0 +1,10 @@
+*:focus {
+	outline: none;
+}
+
+.item a.thumbnail {
+	border: 5px solid transparent;
+}
+.item a.thumbnail:hover, .item a.thumbnail.selected {
+	border: 5px dashed #ffccd5;
+}

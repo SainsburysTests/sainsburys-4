@@ -1,0 +1,95 @@
+// ==================================================
+
+// 2 BASE
+
+// ==================================================
+
+//  http://goo.gl/qpZhdx (based on HTML5 element list)
+// --------------------------------------------------
+
+// --------------------------------------------------
+// 1.2  Box resizing
+// --------------------------------------------------
+* {
+	box-sizing: border-box;
+}
+*:before,
+*:after {
+	box-sizing: border-box;
+}
+
+// --------------------------------------------------
+// 1.2  Root Element
+// --------------------------------------------------
+html {
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	//max-width: $screen-max;
+}
+
+// --------------------------------------------------
+// 1.2  Sections
+// --------------------------------------------------
+body {
+	background-color: $body-bg;
+}
+
+// --------------------------------------------------
+// 1.2  Grouping content
+// --------------------------------------------------
+figure,
+dl,
+dd {
+	margin: 0;
+}
+
+//  2.1.4  Images
+// --------------------------------------------------
+img {
+	vertical-align: middle;
+
+	&.responsive,
+	&.img-responsive,
+	&.image-responsive {
+		@include image-responsive();
+
+		width: 100%;
+	}
+
+	&.rounded, &.img-rounded {
+		border-radius: $border-radius;
+	}
+
+	&.circle, &.img-circle {
+		border-radius: 50%;
+	}
+
+	&.restrict-height {
+		max-height: 200px;
+	}
+}
+
+//  2.1.4  Horizontal rule
+// --------------------------------------------------
+hr {
+	margin-top:    $line-height-computed;
+	margin-bottom: $line-height-computed;
+	border: 0;
+	border-top: 1px solid #eeeeee;
+}
+
+
+// --------------------------------------------------
+// 1.2  Forms
+// --------------------------------------------------
+input,
+button,
+select,
+textarea {
+	font-family: inherit;
+	font-size: inherit;
+	line-height: inherit;
+}
+
+// --------------------------------------------------
+// 1.2  Embedded Content
+// --------------------------------------------------

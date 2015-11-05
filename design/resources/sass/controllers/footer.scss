@@ -1,0 +1,35 @@
+// --------------------------------------------------
+// 1.2  Footer
+// --------------------------------------------------
+footer nav {
+    .nav {
+        @extend .list-inline;
+        margin: 0;
+
+        border: 1px solid $black;
+        border-bottom: none;
+        background-color: $gray-lighter;
+
+        li {
+            padding: 10px 30px;
+        }
+
+        a:hover {
+            text-decoration: none;
+        }
+    }
+
+    .icon-facebook,
+    .icon-google,
+    .icon-twitter {
+        font-size: 41px;
+    }
+
+    // MD and up
+    @media (min-width: $screen-md-min)
+    {
+        .nav span {
+            display: none;
+        }
+    }
+}

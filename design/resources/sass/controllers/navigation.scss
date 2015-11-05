@@ -1,0 +1,90 @@
+// ==================================================
+
+// 1  NAVIGATION
+
+// ==================================================
+
+// --------------------------------------------------
+// 1.2  Default
+// --------------------------------------------------
+.nav {
+	margin-bottom: 0;
+	padding-left: 0; // Override default ul/ol
+	list-style: none;
+	@include clearfix();
+
+	> li {
+		position: relative;
+		display: block;
+
+		> a {
+			border: 1px solid transparent;
+			position: relative;
+			display: block;
+		}
+	}
+}
+
+// --------------------------------------------------
+// 1.2  Site Navigation
+// --------------------------------------------------
+.navigation {
+	label {
+		display: none;
+		cursor: pointer;
+		text-align: center;
+		user-select: none;
+	}
+	label {
+		display: none;
+	}
+	input[type=checkbox] {
+		display: none;
+	}
+}
+
+
+.navigation .nav {
+	@extend .list-inline;
+
+	margin: 0 0 20px;
+	font-size: scale(2);
+
+	border: 1px solid $black;
+	background-color: $gray-lighter;
+}
+
+
+// MD and down
+@media (max-width: $screen-md-min)
+{
+	.navigation {
+		text-align: center;
+
+		.nav {
+			display: none;
+		}
+
+		label {
+			display: inline-block;
+			float: none;
+			padding: 10px 20px;
+			background-color: $gray-lighter;
+			border: 1px solid $black;
+			margin-bottom: 20px;
+		}
+		input[type=checkbox]:checked ~ .nav {
+			display: block;
+		}
+		input[type=checkbox]:checked ~ label {
+			background-color: $gray-light;
+			margin-bottom: 0;
+			display: block;
+		}
+
+		.nav>li {
+			display: block;
+			float: none;
+		}
+	}
+}
